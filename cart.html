@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Cart</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/4a3b1f73a2.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 h-20 flex justify-between items-center">
+            <a href="index.html" class="flex items-center cursor-pointer no-underline">
+                <div class="bg-green-100 p-2 rounded-lg mr-2"><i class="fas fa-shopping-basket text-green-700 text-2xl"></i></div>
+                <h1 class="text-2xl font-bold text-gray-800">Nini's <span class="text-green-700">Grocery</span></h1>
+            </a>
+            <div class="flex items-center space-x-6">
+                <div id="authButtons"></div>
+                <a href="cart.html" class="relative cursor-pointer text-gray-800">
+                    <i class="fas fa-shopping-cart text-2xl"></i><span id="cartCount" class="cart-badge">0</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="max-w-7xl mx-auto px-4 py-12">
+        <h1 class="text-3xl font-bold text-gray-800 mb-8">Shopping Cart</h1>
+        <div id="cartContainer" class="fade-in">
+            </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Profile</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/4a3b1f73a2.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-50">
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 h-20 flex justify-between items-center">
+            <a href="index.html" class="flex items-center cursor-pointer no-underline">
+                <div class="bg-green-100 p-2 rounded-lg mr-2"><i class="fas fa-shopping-basket text-green-700 text-2xl"></i></div>
+                <h1 class="text-2xl font-bold text-gray-800">Nini's <span class="text-green-700">Grocery</span></h1>
+            </a>
+            <div class="flex items-center gap-6">
+                 <a href="cart.html" class="relative cursor-pointer text-gray-800 transition hover:text-green-700">
+                    <i class="fas fa-shopping-cart text-xl"></i><span id="cartCount" class="cart-badge">0</span>
+                </a>
+                <button onclick="app.logout()" class="text-red-500 hover:text-red-700 font-bold text-sm border border-red-100 bg-red-50 px-4 py-2 rounded-full transition">Logout</button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="max-w-6xl mx-auto px-4 py-10 fade-in">
+        <h1 class="text-3xl font-bold text-gray-800 mb-8">My Account</h1>
+        <div class="grid md:grid-cols-12 gap-8">
+            <div class="md:col-span-3">
+                <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden sticky top-24">
+                    <div class="p-6 text-center border-b border-gray-100 bg-green-50">
+                        <div id="profileInitial" class="w-20 h-20 bg-white text-green-600 text-3xl font-bold rounded-full flex items-center justify-center mx-auto mb-3 shadow-sm border-2 border-green-200"></div>
+                        <h2 id="profileName" class="text-lg font-bold text-gray-900">User</h2>
+                        <p id="profileEmail" class="text-xs text-gray-500 font-medium">user@example.com</p>
+                    </div>
+                    <div class="p-4 space-y-1">
+                        <button onclick="app.profileActions.switchTab('orders')" id="tab-orders" class="w-full flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-bold text-gray-600 hover:bg-gray-50 hover:text-green-700 transition text-left bg-green-50 text-green-700">
+                            <i class="fas fa-box-open w-5"></i> My Orders
+                        </button>
+                        <button onclick="app.profileActions.switchTab('address')" id="tab-address" class="w-full flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-bold text-gray-600 hover:bg-gray-50 hover:text-green-700 transition text-left">
+                            <i class="fas fa-map-marker-alt w-5"></i> Addresses
+                        </button>
+                        <button onclick="app.profileActions.switchTab('settings')" id="tab-settings" class="w-full flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-bold text-gray-600 hover:bg-gray-50 hover:text-green-700 transition text-left">
+                            <i class="fas fa-cog w-5"></i> Settings
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="md:col-span-9">
+                <div id="viewOrders" class="space-y-6">
+                    <h2 class="text-xl font-bold text-gray-800 mb-4 flex items-center gap-2"><i class="fas fa-history text-green-600"></i> Order History</h2>
+                    <div id="orderHistory" class="space-y-4"></div>
+                </div>
+                <div id="viewAddress" class="hidden bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
+                    <h2 class="text-xl font-bold text-gray-800 mb-6 flex items-center gap-2"><i class="fas fa-map-marked-alt text-green-600"></i> Delivery Preferences</h2>
+                    <form id="addressForm" class="max-w-lg">
+                        <div class="mb-4">
+                            <label class="block text-xs font-bold text-gray-500 uppercase mb-2">Default Delivery Address</label>
+                            <textarea id="savedAddress" class="custom-input h-32" placeholder="e.g. 123, Talwandi, Kota..."></textarea>
+                        </div>
+                        <button type="submit" class="bg-green-700 text-white px-6 py-3 rounded-xl font-bold shadow hover:bg-green-800 transition">Save Address</button>
+                    </form>
+                </div>
+                <div id="viewSettings" class="hidden bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
+                    <h2 class="text-xl font-bold text-gray-800 mb-6 flex items-center gap-2"><i class="fas fa-user-edit text-green-600"></i> Account Settings</h2>
+                    <form id="settingsForm" class="max-w-lg space-y-5">
+                        <div>
+                            <label class="block text-xs font-bold text-gray-500 uppercase mb-2">Full Name</label>
+                            <input type="text" id="editName" class="custom-input">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-gray-500 uppercase mb-2">Email (Read Only)</label>
+                            <input type="email" id="editEmail" class="custom-input bg-gray-100 cursor-not-allowed" readonly>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-gray-500 uppercase mb-2">New Password</label>
+                            <input type="password" id="editPass" class="custom-input" placeholder="Leave blank to keep current">
+                        </div>
+                        <button type="submit" class="bg-gray-900 text-white px-6 py-3 rounded-xl font-bold shadow hover:bg-black transition">Update Profile</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

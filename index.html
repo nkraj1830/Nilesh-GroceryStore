@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Nini's Grocery Store</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/4a3b1f73a2.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <a href="index.html" class="flex items-center cursor-pointer text-gray-800 no-underline">
+                    <div class="bg-green-100 p-2 rounded-lg mr-2"><i class="fas fa-shopping-basket text-green-700 text-2xl"></i></div>
+                    <div><h1 class="text-2xl font-bold">Nini's <span class="text-green-700">Grocery</span></h1></div>
+                </a>
+                
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="font-bold text-gray-600 hover:text-green-700 transition">Home</a>
+                    <a href="categories.html" class="font-bold text-gray-600 hover:text-green-700 transition">Categories</a>
+                    <a href="about.html" class="font-bold text-gray-600 hover:text-green-700 transition">About Us</a>
+                    <a href="contact.html" class="font-bold text-gray-600 hover:text-green-700 transition">Contact</a>
+                </div>
+
+                <div class="flex items-center space-x-6">
+                    <div id="authButtons"></div>
+                    <a href="cart.html" class="relative cursor-pointer text-gray-800 hover:text-green-700 transition">
+                        <i class="fas fa-shopping-cart text-2xl"></i>
+                        <span id="cartCount" class="cart-badge">0</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="relative bg-green-50 h-[500px] overflow-hidden mb-12 flex flex-col items-center justify-center text-center px-4">
+        <div class="z-10 w-full max-w-3xl">
+            <span class="bg-white text-green-800 px-4 py-1 rounded-full text-xs font-bold mb-6 shadow-sm tracking-wide inline-block">SERVING TALWANDI, DADABARI & VIGYAN NAGAR</span>
+            <h2 class="text-5xl md:text-6xl font-extrabold text-gray-900 mb-6">Fresh Groceries <br><span class="text-green-600">Delivered in 2 Hours</span></h2>
+            
+            <div class="relative w-full max-w-lg mx-auto mb-8">
+                <input id="searchInput" type="text" placeholder="Search for atta, dal, coke..." class="w-full pl-6 pr-12 py-4 rounded-full border-none shadow-lg focus:ring-4 focus:ring-green-200 outline-none text-gray-700 text-lg">
+                <button class="absolute right-2 top-2 bg-green-700 text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-green-800 transition">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+
+            <div class="flex gap-4 justify-center">
+                <a href="categories.html" class="bg-green-700 text-white px-8 py-3 rounded-full font-bold shadow-lg hover:bg-green-800 transition transform hover:scale-105 no-underline">Shop Now</a>
+                <a href="#productGrid" class="bg-white text-green-700 px-8 py-3 rounded-full font-bold shadow-lg hover:bg-gray-50 transition transform hover:scale-105 no-underline">View Products</a>
+            </div>
+        </div>
+        <div class="absolute -bottom-20 -left-20 w-64 h-64 bg-green-200 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
+        <div class="absolute -top-20 -right-20 w-64 h-64 bg-yellow-200 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 mb-16">
+        <div class="flex justify-between items-end mb-8 border-b border-gray-200 pb-4">
+            <h2 class="text-3xl font-bold text-gray-800">Daily Essentials</h2>
+            <a href="categories.html" class="text-green-700 font-bold hover:underline text-sm">View All</a>
+        </div>
+        <div id="productGrid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+            </div>
+    </div>
+
+    <footer class="bg-gray-900 text-gray-300 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-10">
+            <div>
+                <h3 class="text-white font-bold text-lg mb-6">Quick Links</h3>
+                <ul class="space-y-3 text-sm">
+                    <li><a href="index.html" class="hover:text-green-400 transition no-underline">Home</a></li>
+                    <li><a href="categories.html" class="hover:text-green-400 transition no-underline">Categories</a></li>
+                    <li><a href="about.html" class="hover:text-green-400 transition no-underline">About Us</a></li>
+                    <li><a href="contact.html" class="hover:text-green-400 transition no-underline">Contact Us</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-white font-bold text-lg mb-6">Support</h3>
+                <ul class="space-y-3 text-sm">
+                    <li><a href="#" class="hover:text-green-400 transition no-underline">Terms & Conditions</a></li>
+                    <li><a href="#" class="hover:text-green-400 transition no-underline">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-white font-bold text-lg mb-6">Contact Us</h3>
+                <p class="text-sm mb-3 flex items-start gap-3"><i class="fas fa-map-marker-alt mt-1 text-green-500"></i> 21, Talwandi Circle,<br>Kota, Rajasthan - 324005</p>
+                <p class="text-sm mb-3 flex items-center gap-3"><i class="fas fa-phone-alt text-green-500"></i> +91 98765 43210</p>
+                <p class="text-sm flex items-center gap-3"><i class="fas fa-envelope text-green-500"></i> support@niniskota.com</p>
+            </div>
+        </div>
+        <div class="text-center mt-16 pt-8 border-t border-gray-800 text-sm text-gray-500">
+            © 2025 Nini's Grocery Store. All Rights Reserved.
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

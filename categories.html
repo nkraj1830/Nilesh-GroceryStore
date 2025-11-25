@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Categories - Nini's Grocery</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/4a3b1f73a2.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 h-20 flex justify-between items-center">
+            <a href="index.html" class="flex items-center cursor-pointer no-underline">
+                <div class="bg-green-100 p-2 rounded-lg mr-2"><i class="fas fa-shopping-basket text-green-700 text-2xl"></i></div>
+                <h1 class="text-2xl font-bold text-gray-800">Nini's <span class="text-green-700">Grocery</span></h1>
+            </a>
+            
+            <div class="hidden md:flex space-x-8">
+                <a href="index.html" class="font-bold text-gray-600 hover:text-green-700 transition">Home</a>
+                <a href="categories.html" class="font-bold text-gray-600 hover:text-green-700 transition">Categories</a>
+                <a href="about.html" class="font-bold text-gray-600 hover:text-green-700 transition">About Us</a>
+                <a href="contact.html" class="font-bold text-gray-600 hover:text-green-700 transition">Contact</a>
+            </div>
+
+            <div class="flex items-center space-x-6">
+                <div id="authButtons"></div>
+                <a href="cart.html" class="relative cursor-pointer text-gray-800">
+                    <i class="fas fa-shopping-cart text-2xl"></i><span id="cartCount" class="cart-badge">0</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="max-w-7xl mx-auto px-4 py-12">
+        <h1 class="text-4xl font-bold text-gray-800 mb-10 text-center">Shop by Category</h1>
+        <div id="catContainer" class="space-y-16"></div>
+    </div>
+
+    <footer class="bg-gray-900 text-gray-300 pt-12 pb-6 text-center text-sm border-t-4 border-green-600">
+        <p>&copy; 2025 Nini's Grocery Store. All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

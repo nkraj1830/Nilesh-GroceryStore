@@ -1,0 +1,214 @@
+/* style.css - Nini's Grocery Premium Violet Theme */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+    /* Changed Green variables to VIOLET */
+    --primary: #7c3aed;      /* Violet 600 */
+    --primary-dark: #6d28d9; /* Violet 700 */
+    --primary-light: #ddd6fe;/* Violet 200 */
+    --nav-bg: #f5f3ff;       /* Violet 50 (Very Light Purple) */
+    --footer-bg: #2e1065;    /* Violet 950 (Deep Purple) */
+    
+    --accent: #ca8a04;       /* Yellow 600 */
+    --dark: #0f172a;         /* Slate 900 */
+    --light: #f8fafc;        /* Slate 50 */
+    
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f1f5f9;
+    color: #334155;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* --- 1. Light Purple Navigation Bar --- */
+nav {
+    /* Light Violet Background */
+    background: rgba(245, 243, 255, 0.95) !important; 
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(124, 58, 237, 0.1); /* Subtle purple border */
+    transition: all 0.3s ease;
+}
+
+/* Override the Green Elements inside Navbar */
+nav .bg-green-100 {
+    background-color: #ede9fe !important; /* Change green icon bg to light violet */
+    color: var(--primary) !important;
+}
+
+nav .text-green-700 {
+    color: var(--primary) !important; /* Change green text to violet */
+}
+
+nav .hover\:text-green-700:hover {
+    color: var(--primary) !important;
+}
+
+nav .bg-green-600 {
+    background-color: var(--primary) !important;
+}
+
+nav .bg-green-600:hover {
+    background-color: var(--primary-dark) !important;
+}
+
+/* --- 2. Deep Purple Footer --- */
+footer {
+    position: relative;
+    border-top: 5px solid var(--primary);
+    background-color: var(--footer-bg) !important; /* Force Dark Purple */
+    color: #e9d5ff !important; /* Light Lavender Text */
+}
+
+/* Override Green elements inside Footer */
+footer .text-green-500, footer .text-green-400 {
+    color: #a78bfa !important; /* Light Violet Accent */
+}
+
+footer .hover\:text-green-400:hover {
+    color: #fff !important;
+}
+
+/* --- 3. Global Violet Updates (Inputs, Buttons, etc) --- */
+
+/* Hero Section Background Fix (Green-50 -> Violet-50) */
+.bg-green-50 {
+    background: linear-gradient(135deg, #f5f3ff 0%, #ede9fe 100%) !important;
+}
+
+/* Custom Inputs Focus Color */
+.custom-input:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 4px rgba(124, 58, 237, 0.15); /* Violet Glow */
+    transform: translateY(-1px);
+}
+
+/* Button Gradients */
+.bg-green-600, .bg-green-700 {
+    background-color: var(--primary) !important; /* Override all green buttons to violet */
+    background-image: linear-gradient(to bottom right, rgba(255,255,255,0.1), transparent);
+    box-shadow: 0 4px 6px rgba(124, 58, 237, 0.25);
+}
+
+.bg-green-600:hover, .bg-green-700:hover {
+    background-color: var(--primary-dark) !important;
+    box-shadow: 0 8px 15px rgba(124, 58, 237, 0.35);
+    filter: brightness(1.05);
+}
+
+/* Product Cards & Hover Effects */
+.product-card {
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 1px solid transparent;
+}
+
+.product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-xl);
+    border-color: #ddd6fe; /* Violet border on hover */
+    z-index: 10;
+}
+
+.product-card img {
+    transition: transform 0.5s ease;
+    filter: drop-shadow(0 4px 6px rgba(0,0,0,0.05));
+}
+
+.product-card:hover img {
+    transform: scale(1.08) rotate(2deg);
+}
+
+/* Text Overrides for Titles */
+.text-green-600, .text-green-700, .text-green-800 {
+    color: var(--primary) !important; /* Make headings violet */
+}
+
+.bg-green-100 {
+    background-color: #ede9fe !important; /* Make light tags violet */
+    color: var(--primary-dark) !important;
+}
+
+/* Cart Badge */
+.cart-badge {
+    position: absolute;
+    top: -8px;
+    right: -10px;
+    background-color: #ef4444;
+    color: white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    font-size: 0.7rem;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid white;
+    box-shadow: 0 2px 5px rgba(239, 68, 68, 0.5);
+    animation: pulse-red 2s infinite;
+}
+
+@keyframes pulse-red {
+    0% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7); }
+    70% { box-shadow: 0 0 0 6px rgba(239, 68, 68, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); }
+}
+
+/* Animations */
+.fade-in {
+    animation: fadeIn 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+@keyframes fadeIn {
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Checkout Options */
+.payment-option {
+    border: 2px solid #e2e8f0;
+    transition: all 0.2s;
+    position: relative;
+    overflow: hidden;
+}
+
+.payment-option:hover {
+    border-color: var(--primary-light);
+    background: #f5f3ff;
+}
+
+.payment-option.selected {
+    border-color: var(--primary);
+    background: #f5f3ff;
+    box-shadow: var(--shadow-md);
+}
+
+.payment-option.selected::after {
+    content: '✓';
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    color: var(--primary);
+    font-weight: 900;
+    font-size: 1.2rem;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: #f1f5f9; }
+::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 5px; border: 2px solid #f1f5f9; }
+::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+
+/* Mobile */
+@media (max-width: 768px) {
+    .product-card { margin-bottom: 1rem; }
+    nav { padding-top: 0.5rem; padding-bottom: 0.5rem; }
+}
